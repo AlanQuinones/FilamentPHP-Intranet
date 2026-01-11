@@ -4,6 +4,10 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use App\Models\Country;
+use App\Models\Holiday;
+use App\Models\Calendar;
+use App\Models\TimeSheet;
+use App\Models\Department;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -52,7 +56,25 @@ class User extends Authenticatable
         ];
     }
 
-    public function Country(){
+    public function country()
+    {
         return $this->belongsTo(Country::class);
+    }
+
+    public function calendars()
+    {
+        return $this->belongsToMany(Calendar::class);
+    }
+    public function departments()
+    {
+        return $this->belongsToMany(Department::class);
+    }
+
+    public function holidays(){
+        return $this->hasMany(Holiday::class);
+    }
+
+    public function timeSheets(){
+        return $this->hasMany(TimeSheet::class);
     }
 }
