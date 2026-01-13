@@ -22,8 +22,8 @@ class CityResource extends Resource
     protected static ?string $model = City::class;
 
     protected static string | UnitEnum | null $navigationGroup = 'System Management';
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedBuildingOffice;
-    protected static ?int $navigationSort = 4;
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedBuildingOffice2;
+    protected static ?int $navigationSort = 5;
     protected static ?string $recordTitleAttribute = 'City';
 
     public static function form(Schema $schema): Schema

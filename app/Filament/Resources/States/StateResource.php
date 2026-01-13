@@ -22,9 +22,9 @@ class StateResource extends Resource
     protected static ?string $model = State::class;
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedBuildingLibrary;
-    protected static string | UnitEnum | null $navigationGroup = 'System Management';
     protected static ?string $recordTitleAttribute = 'State';
-    protected static ?int $navigationSort = 3;
+    protected static string | UnitEnum | null $navigationGroup = 'System Management';
+    protected static ?int $navigationSort = 4;
     public static function form(Schema $schema): Schema
     {
         return StateForm::configure($schema);
