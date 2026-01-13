@@ -9,6 +9,13 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Holiday extends Model
 {
+
+    protected $fillable = [
+        'calendar_id',
+        'user_id',
+        'rest_day',
+        'type'
+    ];
     use HasFactory;
     public function user(){
         return $this->belongsTo(User::class);
